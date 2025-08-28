@@ -32,7 +32,7 @@ export function GET() {
 }
 
 export async function DELETE(req: NextRequest) {
-  const body = (await req.json()) as { id: number };
+  const body = await req.json();
   if (!body.id) {
     return Response.json({ error: "No id provided" }, { status: 400 });
   }
